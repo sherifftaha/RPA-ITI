@@ -1,0 +1,6 @@
+{
+  "Name": "Lab3",
+  "ProjectType": "Process",
+  "Description": "Imdb and ACME system",
+  "MainFile": "Main.xaml"
+}

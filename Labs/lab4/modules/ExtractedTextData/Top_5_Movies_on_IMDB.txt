@@ -1,0 +1,10 @@
+Movie Name: 1. The Shawshank Redemption - Year: 1994 - Duration: 2h 22m - PG: R
+
+Movie Name: 2. The Godfather - Year: 1972 - Duration: 2h 55m - PG: R
+
+Movie Name: 3. The Dark Knight - Year: 2008 - Duration: 2h 32m - PG: PG-13
+
+Movie Name: 4. The Godfather Part II - Year: 1974 - Duration: 3h 22m - PG: R
+
+Movie Name: 5. 12 Angry Men - Year: 1957 - Duration: 1h 36m - PG: Approved
+
