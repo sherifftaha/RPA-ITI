@@ -1,0 +1,6 @@
+{
+  "Name": "ACME_dispatcher",
+  "ProjectType": "Process",
+  "Description": "Robotic Enterprise Framework for ACME_dispatcher",
+  "MainFile": "Main.xaml"
+}
