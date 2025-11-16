@@ -1,6 +1,0 @@
-{
-  "Name": "lab1",
-  "ProjectType": "Process",
-  "Description": "Get temperature from chrome and put it in notepad ",
-  "MainFile": "Main.xaml"
-}
