@@ -1,0 +1,223 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ExtractMovieData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_dict_MovieDetails" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ExtractMovieData_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ExtractMovieData" sap:VirtualizedContainerService.HintSize="711,1908" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Sequence &quot;ExtractMovieData&quot;" sap:VirtualizedContainerService.HintSize="580,1885" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="546,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[out_dict_MovieDetails]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(of String,String)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Chrome Movie webPage - IMDB" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="546,1687" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="ed65177e-9ada-420f-86db-c7406744fe12" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,1446" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="str_MovieDirectors" />
+                <Variable x:TypeArguments="scg:List(x:String)" Name="list_MovieDirectors">
+                  <Variable.Default>
+                    <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="New List(of string)" />
+                  </Variable.Default>
+                </Variable>
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NGetUrl CurrentUrl="[out_dict_MovieDetails(&quot;Url&quot;)]" DisplayName="Get URL &quot;Movie url&quot;" sap:VirtualizedContainerService.HintSize="478,123" sap2010:WorkflowViewState.IdRef="NGetUrl_2" ScopeIdentifier="ed65177e-9ada-420f-86db-c7406744fe12" Version="V5" />
+              <uix:NGetText DisplayName="Get Text 'MovieName'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="ed65177e-9ada-420f-86db-c7406744fe12" TextString="[out_dict_MovieDetails(&quot;Name&quot;)]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt4154796" CVScreenId="c6f40c09-6e9b-4dce-892d-e7723071129e" ContentHash="15EiayL4IUConBv2RSrUZA" CvType="AnyWordGroup" DesignTimeRectangle="105, 262, 423, 58" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='hero__primary-text' parentid='__next' tag='SPAN' /&gt;" Guid="5630885c-56ee-4c85-b2aa-a0e8b5687ca5" InformativeScreenshot="877ae813ac999ac20aa22c6cb310d958.png" Reference="CAy5C_gLh0Cw5QdZbp04Yw/5aEqbcpPC0u7bc6avC-UCw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Avengers: Endgame (2019) - IMDb' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'MovieRATING'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="ed65177e-9ada-420f-86db-c7406744fe12" TextString="[out_dict_MovieDetails(&quot;Rating&quot;)]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt4154796" CVScreenId="d3d95e53-79e6-4423-bcad-ad8955feb01e" ContentHash="0cPzWETLVEmnbHqAACWJVQ" CvType="AnyWordGroup" DesignTimeRectangle="1004, 289, 32, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='__next' tag='SPAN' type='' class='sc-4dc495c1-1 lbQcRY' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="9a6aa215-2836-496b-b8ca-a3a8e2be437a" InformativeScreenshot="97494eb1ba9131a4fbb87583f09f08b2.png" Reference="CAy5C_gLh0Cw5QdZbp04Yw/Nr4AfKTqOEmKO55zgtBk4A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Avengers: Endgame (2019) - IMDb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="d3d95e53-79e6-4423-bcad-ad8955feb01e" DesignTimeRectangle="969, 269, 96, 16" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='IMDb RATING' parentid='__next' tag='DIV' /&gt;" Guid="a1e3864d-209d-489b-ae92-095bd7712fd5" SearchSteps="Selector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'MoviePopularity'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="ed65177e-9ada-420f-86db-c7406744fe12" TextString="[out_dict_MovieDetails(&quot;Popularity&quot;)]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt4154796" CVScreenId="d3d95e53-79e6-4423-bcad-ad8955feb01e" ContentHash="zUKh8Yf3vUuZobmVpvmlnA" DesignTimeRectangle="1248, 295, 38, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='339' parentid='__next' tag='DIV' /&gt;" Guid="4262c4f3-32e8-4fc7-aa16-1600eaa8266d" InformativeScreenshot="cb4bd885c494830d7879de420b519a52.png" Reference="CAy5C_gLh0Cw5QdZbp04Yw/sREqbF4z4EedcBxj2WO5ow" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Avengers: Endgame (2019) - IMDb' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'MovieYear'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="ed65177e-9ada-420f-86db-c7406744fe12" TextString="[out_dict_MovieDetails(&quot;Year&quot;)]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt4154796" CVScreenId="d3d95e53-79e6-4423-bcad-ad8955feb01e" ContentHash="2fZS6JCsT0ye7Bw6TTuNTg" DesignTimeRectangle="105, 319, 32, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='2019' parentid='__next' tag='A' /&gt;" Guid="ec9b495a-a978-4fce-8228-26d4d48dcc48" InformativeScreenshot="27cb545e8be8716e4b48668fef2b5532.png" Reference="CAy5C_gLh0Cw5QdZbp04Yw/c__Gb6hMuk6sEmDGsRj7dg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Avengers: Endgame (2019) - IMDb' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'Movie - PG'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="ed65177e-9ada-420f-86db-c7406744fe12" TextString="[out_dict_MovieDetails(&quot;Pg&quot;)]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt4154796" CVScreenId="b4b19108-b260-4ce8-b269-6bc7dc5809df" ContentHash="KGA9UYD1zEqMnzYOO5pGtw" DesignTimeRectangle="137, 319, 57, 20" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-role='presentation' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li' idx='2' tag='LI' /&gt;" Guid="aaa916be-a90b-4feb-9a46-1fae1a59d230" InformativeScreenshot="eb360e2091cc466e3b98beac94241f40.png" Reference="CAy5C_gLh0Cw5QdZbp04Yw/Vn96UBSnf0mNqoMQ7147kQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Avengers: Endgame (2019) - IMDb' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'MovieDuration'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="ed65177e-9ada-420f-86db-c7406744fe12" TextString="[out_dict_MovieDetails(&quot;Duration&quot;)]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt4154796" CVScreenId="ce930919-c5c1-48b9-8e81-2707db08d306" ContentHash="g1-a3T2chUSzDUJWd3G6wg" DesignTimeRectangle="194, 319, 59, 20" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-role='presentation' isleaf='1' tag='LI' /&gt;" Guid="575c2ed1-f16d-4991-87d2-942931b966b3" InformativeScreenshot="a3953ba27b0a8c752a24dd0eb8c51386.png" Reference="CAy5C_gLh0Cw5QdZbp04Yw/Doa6_SEBRESJG19lV293hQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Avengers: Endgame (2019) - IMDb' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'Movie Directors'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="ed65177e-9ada-420f-86db-c7406744fe12" TextString="[str_MovieDirectors]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt4154796" CVScreenId="c6734e0e-cd9c-44d0-a42e-e50158ebd5f4" ContentHash="AubRieAwokaXmQHWbjXG7w" DesignTimeRectangle="183, 436, 735, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='ipc-metadata-list-item__content-container' parentid='__next' tag='DIV' /&gt;" Guid="32dc91cf-ba46-447d-95d7-f480e6c3ad9a" InformativeScreenshot="1d8c31df791c339e9d76b598b1756e50.png" Reference="CAy5C_gLh0Cw5QdZbp04Yw/rxt0MGQxjkC_8Odbp3F1oQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Avengers: Endgame (2019) - IMDb' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <Assign DisplayName="Assign &quot;Separate movie directors name&quot;" sap:VirtualizedContainerService.HintSize="478,115" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="scg:List(x:String)">[list_MovieDirectors]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="scg:List(x:String)">[str_MovieDirectors.Replace("Russo","Russo,").Trim(","c).Split(","c).ToList]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,173" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[out_dict_MovieDetails("Director_1")]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[list_MovieDirectors(0)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[out_dict_MovieDetails("Director_2")]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[list_MovieDirectors(1)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1456, 876" BrowserType="Chrome" ContentHash="QX1v3yLORECLqt9kzoFlXw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAdVJREFUWEftlDssQ1EYx69q7+2tPt2iJjERLJV4LMSgBq9OWBjaREKICBI0MZSQVEMIDQORWiRKjBUbJWHvZMUuwfy53znpfbSJ3EgwOMMv53/O7fm+X865vdzHnQ/+EibABJgAE2ACBQLHyy4ItPAwGLDCzYFEMhLqF+HlslyZI9mUVzfvauUhErbDW6YCJodsZC0+7dDVz6dAIDpmB47jwCeZ4DzuIRkRBQ5uDyVljtwn1bnHUaTkkzU3NDdYSA7L4vk9tBgWQGJTDt1cK5De8YC5mOatWacigCeXirkJ77cVul6IIQHeQgvjkeJJYEa0AleJUrBZ6SloBQRe/f3KuF3XCzEkUFNVTEarXKyu2qwU/EqgqZ4KDHeLEOwQSO5rF3S9EEMC/lozVHpNJPe00WKIkRMIB0UC5l55b34/QwKNskCbnycZ324ckXyB3PX8iAC+TJg3Z9QXUSuwNEr3Idtz6hWMyFcw0Gkl+dtXgAKrE7TxxQZdQ7QCOUwmDu6OJOUELGb12WKoRNcLKRB4OJZgL+KEZNQFjxdlJKfW3ZA99ZL8lC4nI/Kcps9z7MvgfqxzFneTtYz8MUssOGF33gmv1wb+hr8NE2ACTIAJ/HcBH3wCnyEaX70T9tEAAAAASUVORK5CYII=" InformativeScreenshot="a5c7f32c7875de081397297b3e45c572.jpg" Reference="CAy5C_gLh0Cw5QdZbp04Yw/CicC5SWDIkmKogcR7tIlWw" Selector="&lt;html app='chrome.exe' title='*' /&gt;" Version="V2" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
