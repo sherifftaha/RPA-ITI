@@ -1,0 +1,6 @@
+{
+  "Name": "Lab2_DataManipulation",
+  "ProjectType": "Process",
+  "Description": "DataManipulation",
+  "MainFile": "Main.xaml"
+}
